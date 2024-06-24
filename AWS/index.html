@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Car Remote Control</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IOT Car Remote Control</h1>
+        <form id="controlForm">
+            <label for="speed">Speed:</label>
+            <input type="range" id="speed" name="speed" min="0" max="100" value="50">
+            
+            <label for="direction">Direction:</label>
+            <select id="direction" name="direction">
+                <option value="forward">Forward</option>
+                <option value="backward">Backward</option>
+            </select>
+            
+            <label for="wheelAngle">Wheel Angle:</label>
+            <input type="range" id="wheelAngle" name="wheelAngle" min="2.5" max="12" value="8">
+
+            <label for="trackId">Track ID:</label>
+            <input type="number" id="trackId" name="trackId" min="0" max="10" value = 0>
+
+            <button type="button" onclick="sendInstructions()">Send Instructions</button>
+        </form>
+        <div id="statusMessage"></div>
+    </div>
+
+    <div class="container">
+        <h1>Track Replay</h1>
+        <form id="trackMap">
+            <label for="send_trackId">Track ID:</label>
+            <input type="number" id="send_trackId" name="send_trackId" min="1" max="10" value = 0 >
+            <button type="button" onclick="sendTrack()">Get Track</button>
+        </form>
+        <div id="statusMessage2"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
